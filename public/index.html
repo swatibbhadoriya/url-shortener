@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>⚡ URL Shortener</h1>
+      <p>Transform your long URLs into short, easy-to-share links.</p>
+    </header>
+
+    <section id="auth-section" class="card">
+      <h2>Get Started</h2>
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button onclick="register()">Register</button>
+      <button onclick="login()">Login</button>
+      <p class="note">Already have an account? Log in to access your URLs.</p>
+    </section>
+
+    <section id="shorten-section" class="card hidden">
+      <h2>Create a Short URL</h2>
+      <input type="text" id="original-url" placeholder="Original URL" required>
+      <input type="text" id="friendly-name" placeholder="Custom Name (Optional)">
+      <button onclick="shortenURL()">Shorten URL</button>
+    </section>
+
+    <section id="urls-section" class="card hidden">
+      <h2>Your Shortened URLs</h2>
+      <input type="text" id="search-friendly-name" placeholder="Search by Friendly Name">
+      <input type="date" id="search-date" placeholder="Filter by Date">
+      <button onclick="fetchURLs()">Search/Filter</button>
+      <div id="urls-list">
+        <!-- URLs will be dynamically inserted here -->
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
